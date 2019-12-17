@@ -1,14 +1,16 @@
 package com.yosef.book.management.entities;
 
-import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "book")
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
 
     @Column(name = "title", length = 50, nullable = false)
@@ -22,6 +24,11 @@ public class Book {
 
     @Column(name = "penerbit", length =50 , nullable = false)
     private String penerbit;
+
+    @OneToMany(
+            mappedBy = "book"
+    )
+    private List<Author> authors;
 
     public Book() {
     }
@@ -65,4 +72,13 @@ public class Book {
     public void setPenerbit(String penerbit) {
         this.penerbit = penerbit;
     }
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
+    }
+
 }

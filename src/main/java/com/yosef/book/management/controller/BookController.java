@@ -3,10 +3,8 @@ package com.yosef.book.management.controller;
 import com.yosef.book.management.entities.Book;
 import com.yosef.book.management.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.List;
 import java.util.Optional;
 
