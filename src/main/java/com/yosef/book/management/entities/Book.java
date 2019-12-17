@@ -1,6 +1,7 @@
 package com.yosef.book.management.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 public class Book {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "title", length = 50, nullable = false)
