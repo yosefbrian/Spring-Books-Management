@@ -4,7 +4,7 @@ import javax.annotation.Generated;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "books")
+@Table(name = "book")
 public class Book {
 
     @Id
